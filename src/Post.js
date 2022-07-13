@@ -83,8 +83,6 @@ export default function Post({postId, username, caption, imageUrl, signedinUser}
           });
     }
 
-    // console.log(signedinUser._delegate.uid);
-
 
     const postDel = () => {
         const del = db.collection("posts").where(firebase.firestore.FieldPath.documentId(),"==", postId);
@@ -116,7 +114,6 @@ export default function Post({postId, username, caption, imageUrl, signedinUser}
 onClick={whoLiked.includes(signedinUser.displayName) ? pressDelete : pressLike}
 type="submit"
 className="post__likeButton"
-// disabled={thisUserLiked}
 >
     <span>{whoLiked.length} { whoLiked.includes(signedinUser.displayName) ? "unlike" : "like" } </span>
 </button> )}
